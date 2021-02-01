@@ -18,3 +18,84 @@ create database データベース名;
 #### ubuntu disk size
 https://forums.linuxmint.com/viewtopic.php?t=280317
 https://forums.linuxmint.com/viewtopic.php?f=90&t=280289#p1543983
+
+### Install
+```
+Download VirtualBox platform packages
+# https://www.virtualbox.org/wiki/Downloads
+## -> VirtualBox-6.1.18-142142-OSX.dmg
+and then install by double click
+
+If it fails, check mac system setting(環境設定) -> セキュリティとプライバシー -> 一般
+-> unlock -> allow prohibited package
+then, tyr again
+
+After that, create new machine named "ubuntu" by click "新規"
+
+# reference
+## https://shoji014.com/virtualbox-error/
+```
+
+### Install Ubuntu
+```
+Download ubuntu iso
+# https://www.ubuntulinux.jp/download
+## -> ubuntu-20.04.1-desktop-amd64.iso
+
+set as following
+# Right click on "ubuntu"(your machine name) on virtual box manager.
+# 「設定」をクリックして、「ストレージ 」＞「コントローラー: IDE」 の下の「空」を選択します。
+# CD/DVDドライブの右にあるディスクのアイコンをクリックして、仮想CD/DVDディスクファイルの選択で、ubuntuのisoイメージを選択し、「OK」をクリック。
+
+Start the machine and follow a guidace from ubuntu installer.
+Select Japanese language to adjust keyboard setting align with your host machine.
+
+# reference
+## https://cvtech.cc/virtualbox/
+```
+### Copy and Paste bidirectionally
+```
+Install Guest Additions CD image
+Click "Devices" on top bar and click "Insert Guest Additions CD image"
+After that click "run" button as system guide you through.
+And then reboot.
+
+# or download from https://w0.dk/~chlor/vboxguestadditions/
+## VBoxGuestAdditions_6.1.18.iso
+## In this case, set this iso like ubuntu iso and run the machine.
+## After that, click CD image on ubuntu desk top(left bar) and then follow a guidance of installer
+## And then reboot
+
+After reboot, you can change copy and paste setting easily on "Devices"(top bar)
+
+# reference url
+## https://qiita.com/LemonLeaf/items/ac12404e277ff9bb3a65
+```
+
+### Web cam
+```
+Download Virtual Box Oracle VM VirtualBox Extension Pack.
+# https://www.virtualbox.org/wiki/Downloads
+## Oracle_VM_VirtualBox_Extension_Pack-6.1.18.vbox-extpack
+## reference
+### https://pc-karuma.net/virtualbox-extension-pack-install/
+
+Install the extension pack by double click the installer, running ubuntu machine.
+
+Check installed by following command on host command prompt. (not ubuntu terminal)
+VBoxManage list webcams
+# -> Video Input Devices: 1
+# -> .1 "FaceTime HDカメラ"
+# -> CC24076DX0QF6VVDK
+
+Attach the webcam (or webcams) you want to use by following command
+VboxManage controlvm "ubuntu" webcam attach .1
+# "ubuntu" stands for the name of virtual box machine.
+# The number at the end of the line indicates the camera.
+
+After that move on to "Devices" of top bar and "webcams"
+
+# Reference
+## https://automaticaddison.com/connect-your-built-in-webcam-to-ubuntu-20-04-on-a-virtualbox/#:~:text=Open%20the%20Oracle%20VM%20VirtualBox,Launch%20Ubuntu.&text=Click%20Devices%20%2D%3E%20Webcams.,Enable%20your%20webcam(s).
+```
+
