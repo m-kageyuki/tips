@@ -19,6 +19,7 @@ create database データベース名;
 https://forums.linuxmint.com/viewtopic.php?t=280317
 https://forums.linuxmint.com/viewtopic.php?f=90&t=280289#p1543983
 
+## Virtual Box
 ### Install
 ```
 Download VirtualBox platform packages
@@ -97,5 +98,47 @@ After that move on to "Devices" of top bar and "webcams"
 
 # Reference
 ## https://automaticaddison.com/connect-your-built-in-webcam-to-ubuntu-20-04-on-a-virtualbox/#:~:text=Open%20the%20Oracle%20VM%20VirtualBox,Launch%20Ubuntu.&text=Click%20Devices%20%2D%3E%20Webcams.,Enable%20your%20webcam(s).
+```
+
+## Anaconda
+### Installer
+```
+https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+
+search by anaconda on google
+https://docs.anaconda.com/anaconda/install/linux/
+/bin/bash ~/Downloads/Anaconda3-2020.11-Linux-x86_64.sh
+```
+
+### Manage
+```
+https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda
+
+# check version
+conda --version
+
+# Update conda to the current version. Type the following:
+conda update conda
+## Conda compares versions and then displays what is available to install.
+## If a newer version of conda is available, type y to update:
+## Proceed ([y]/n)? y
+
+# Create a new environment
+conda create --name hogehoge
+## Create a new environment and install a package in it.
+## We will name the environment snowflakes and install the package BioPython. At the Anaconda Prompt or in your terminal window, type the following:
+conda create --name snowflakes biopython
+
+# Deactivate current environment
+conda deactivate
+
+# Activate another environment
+conda hogehoge
+
+# To see a list of all your environments, type:
+conda info --envs
+
+# run jupyter
+jupyter-lab --ip=0.0.0.0 --allow-root &
 ```
 
