@@ -142,3 +142,62 @@ conda info --envs
 jupyter-lab --ip=0.0.0.0 --allow-root &
 ```
 
+## postgresql
+https://rowingfan.hatenablog.jp/entry/2018/08/14/143200  
+https://symfoware.blog.fc2.com/blog-entry-2173.html  
+
+リポジトリの追加 
+```
+ echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee -a /etc/apt/sources.list.d/pgdg.list
+```
+
+信頼キーの取得と追加  
+```
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
+ここでエラーになったので以下を実行
+```
+sudo apt install gnupg
+
+sudo apt update
+sudo apt upgrade
+```
+PostgreSQL10とpgadmin4をインストールする。
+```
+sudo apt -y install postgresql-10 pgadmin4
+
+psql --version
+```
+起動
+```
+sudo service postgresql start
+```
+最初のログイン
+```
+sudo -u postgres psql
+```
+
+ロールをつくる。
+```
+postgres=# create role vagrant with login createdb;
+```
+postgresユーザーのパスワードを変更する。
+```
+postgres=# alter user postgres password 'postgres';
+```
+ログアウト
+```
+postgres=# \q
+```
+peer認証の関係でpsqlログインできないのでpg_hba.confを修正。
+```
+/etc/postgresql/10/main/pg_hba.conf
+local all postgres md5
+```
+postgresqlを再起動
+```
+psql -h /var/run/postgresql/ -p 5432 -U postgres -W 
+```
+```
+cat sql | psql -h /var/run/postgresql/ -p 5432 -U postgres -W -A -F, > test.csv
+```
