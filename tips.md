@@ -9,6 +9,9 @@ https://qiita.com/ritya/items/b1ae186f3f6308c52289
 https://www.ashisuto.co.jp/db_blog/article/20160308_postgresql_with_python.html
 
 ```
+## install python module on ubuntu
+pip install psycopg2-binary
+
 sudo service postgresql start
 create role ロール名 with createdb login password 'パスワード';
 create database データベース名;
