@@ -1,3 +1,4 @@
+https://qiita.com/hoto17296/items/0ca1569d6fa54c7c4732
 ```
 import numpy as np
 import psycopg2 as psy
@@ -102,6 +103,7 @@ conn.commit()
 c.close()
 conn.close()
 ```
+```
 dest = sqlite3.connect(':memory:',detect_types=sqlite3.PARSE_DECLTYPES)
 conn.backup(dest)
 dcur = dest.cursor()
@@ -111,3 +113,6 @@ for d in dcur:
     print(d[1])
     print(d[2])
 ```
+https://stackoverflow.com/questions/3850022/how-to-load-existing-db-file-to-memory-in-python-sqlite3
+
+https://www.it-swarm.jp.net/ja/python/python-numpy%E9%85%8D%E5%88%97%E3%82%92sqlite3%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8C%BF%E5%85%A5/1042343525/
