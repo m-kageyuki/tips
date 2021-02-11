@@ -151,4 +151,33 @@ https://github.com/simplegeo/shapely/tree/c582217b9e70edbedfde98d8027b6b97d95ce9
 https://gis.stackexchange.com/questions/350252/combine-multiple-polygons-into-a-single-one-with-holes
 https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.unary_union
 https://automating-gis-processes.github.io/CSC18/index.html
+
+# sample2
+from centerline.geometry import Centerline
+from shapely.geometry import Point, Polygon, LineString
+from shapely.geometry import Polygon, MultiPolygon, MultiLineString
+from shapely.geometry import Point, Polygon, LineString
+from shapely.ops import unary_union
+from collections import Counter
+pl1 = Polygon(([0,0],[0,4],[4,4],[4,0]))
+#pl2 = Polygon(([0,4],[0,8],[4,8],[4,4]))
+pl2 = Polygon(([4,8],[0,8],[0,4],[4,4]))
+pl3 = Polygon(([5,9],[0,10],[0,8],[4,8]))
+ml = MultiPolygon([pl1, pl2, pl3])
+m = unary_union(ml)
+attributes = {"id": 1, "name": "polygon", "valid": True}
+centerline = Centerline(m,**attributes)
+
+l=[]
+ls = LineString([[4,8],[0,8]])
+print(len(centerline))
+for c in centerline:
+    if pl2.intersects(c):
+        if not pl2.contains(c) and ls.intersects(c):
+            p = ls.intersection(c)
+            l.append(LineString([p,p]))
+            continue
+        l.append(c)
+ms = MultiLineString(l)
+ms
 ```
