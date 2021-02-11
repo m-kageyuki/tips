@@ -119,7 +119,12 @@ https://www.it-swarm.jp.net/ja/python/python-numpy%E9%85%8D%E5%88%97%E3%82%92sql
 
 ### polygon
 ```
+from centerline.geometry import Centerline
+from shapely.geometry import Point, Polygon, LineString
+from shapely.geometry import Polygon, MultiPolygon, MultiLineString
+from shapely.geometry import Point, Polygon, LineString
 from shapely.ops import unary_union
+from collections import Counter
 pl1 = Polygon(([0,0],[0,4],[4,4],[4,0]))
 #pl2 = Polygon(([0,4],[0,8],[4,8],[4,4]))
 pl2 = Polygon(([4,8],[0,8],[0,4],[4,4]))
