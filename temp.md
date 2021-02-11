@@ -116,3 +116,23 @@ for d in dcur:
 https://stackoverflow.com/questions/3850022/how-to-load-existing-db-file-to-memory-in-python-sqlite3
 
 https://www.it-swarm.jp.net/ja/python/python-numpy%E9%85%8D%E5%88%97%E3%82%92sqlite3%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8C%BF%E5%85%A5/1042343525/
+
+### polygon
+```
+from shapely.ops import unary_union
+pl1 = Polygon(([0,0],[0,4],[4,4],[4,0]))
+#pl2 = Polygon(([0,4],[0,8],[4,8],[4,4]))
+pl2 = Polygon(([4,8],[0,8],[0,4],[4,4]))
+pl3 = Polygon(([5,12],[0,11],[0,8],[4,8]))
+ml = MultiPolygon([pl1, pl2, pl3])
+m = unary_union(ml)
+centerline = Centerline(m, **attributes)
+
+l=[]
+for c in centerline:
+    if pl2.contains(c):
+        l.append(c)
+
+ms = MultiLineString(l)
+ms
+```
