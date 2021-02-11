@@ -130,9 +130,20 @@ centerline = Centerline(m, **attributes)
 
 l=[]
 for c in centerline:
-    if pl2.contains(c):
+    if pl2.intersects(c):
         l.append(c)
 
 ms = MultiLineString(l)
 ms
+
+# show point of intersection
+l1 = LineString([[0,0],[0,10]])
+l2 = LineString([[-1,5],[2,5]])
+print(l1.intersection(l2))
+
+# references
+https://github.com/simplegeo/shapely/tree/c582217b9e70edbedfde98d8027b6b97d95ce991
+https://gis.stackexchange.com/questions/350252/combine-multiple-polygons-into-a-single-one-with-holes
+https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.unary_union
+https://automating-gis-processes.github.io/CSC18/index.html
 ```
