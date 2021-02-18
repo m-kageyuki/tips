@@ -180,4 +180,26 @@ for c in centerline:
         l.append(c)
 ms = MultiLineString(l)
 ms
+
+# sample3
+from shapely.ops import unary_union
+from shapely.geometry import MultiPolygon
+from centerline.geometry import Centerline
+p1 = Polygon([[0, 0], [0, 4], [4, 4], [4, 0]])
+p2 = Polygon([[0, 4], [0, 8], [2, 8],[2,6], [2, 4]])
+p3 = Polygon([[2, 4], [2,6],[2, 8], [4, 8], [4, 4]])
+p4 = Polygon([[0, 0], [4, 0], [4, -4], [0, -4]])
+l=[]
+for ln in p2.intersection(p3):
+    l.append(list(ln.coords)[0])
+    l.append(list(ln.coords)[1])
+print(l)
+ll = []
+ll.append(l)
+#hole = [[(-170, 80), (-170, -80), (170, -80), (170, 80)]]
+p = Polygon(shell=unary_union([p1,p2,p3,p4]).exterior.coords, holes=ll)
+p
+
+reference
+https://automating-gis-processes.github.io/CSC18/lessons/L1/Geometric-Objects.html
 ```
