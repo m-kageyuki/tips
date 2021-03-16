@@ -203,3 +203,12 @@ p
 reference
 https://automating-gis-processes.github.io/CSC18/lessons/L1/Geometric-Objects.html
 ```
+
+### C#
+```
+https://csharp.keicode.com/basic/events-basic.php
+https://blog.okazuki.jp/entry/2017/09/19/224857
+https://docs.microsoft.com/en-us/dotnet/api/coreml?view=xamarin-ios-sdk-12
+https://docs.microsoft.com/ja-jp/xamarin/ios/platform/introduction-to-ios11/coreml
+https://docs.microsoft.com/ja-jp/dotnet/machine-learning/how-to-guides/save-load-machine-learning-models-ml-net
+```
