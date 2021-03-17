@@ -211,4 +211,9 @@ https://blog.okazuki.jp/entry/2017/09/19/224857
 https://docs.microsoft.com/en-us/dotnet/api/coreml?view=xamarin-ios-sdk-12
 https://docs.microsoft.com/ja-jp/xamarin/ios/platform/introduction-to-ios11/coreml
 https://docs.microsoft.com/ja-jp/dotnet/machine-learning/how-to-guides/save-load-machine-learning-models-ml-net
+https://docs.microsoft.com/ja-jp/dotnet/machine-learning/how-to-guides/save-load-machine-learning-models-ml-net
+https://github.com/xamarin/xamarin-macios
+https://qiita.com/TokyoYoshida/items/7aa67dcea059a767b4f2
+https://developer.apple.com/documentation/coreml/core_ml_api/creating_a_custom_layer
+https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/connect/machine-learning-deliver-on-device-machine-learning-solutions
 ```
