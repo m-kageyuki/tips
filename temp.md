@@ -216,4 +216,21 @@ https://github.com/xamarin/xamarin-macios
 https://qiita.com/TokyoYoshida/items/7aa67dcea059a767b4f2
 https://developer.apple.com/documentation/coreml/core_ml_api/creating_a_custom_layer
 https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/connect/machine-learning-deliver-on-device-machine-learning-solutions
+
+private void completionHandler(MLUpdateContext obj)
+        {
+            DispatchQueue.DefaultGlobalQueue.DispatchAsync(() =>
+            {
+                throw new NotImplementedException();
+            });
+        }
+
+https://betterprogramming.pub/how-to-create-updatable-models-using-core-ml-3-cc7decd517d5
+https://note.com/shu223/n/n31f88333219d
+https://stackoverflow.com/questions/57806668/how-to-make-a-mlmodel-updatable-in-swift-coreml
+https://machinethink.net/blog/coreml-training-part4/
+https://developer.apple.com/documentation/coreml/mlupdateprogresshandlers
+https://developer.apple.com/documentation/coreml/mlmodeldescription
+https://github.com/anupamchugh/iowncode/tree/master/iOSCoreMLOnDeviceTraining
+https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml
 ```
