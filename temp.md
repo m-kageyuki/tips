@@ -233,4 +233,6 @@ https://developer.apple.com/documentation/coreml/mlupdateprogresshandlers
 https://developer.apple.com/documentation/coreml/mlmodeldescription
 https://github.com/anupamchugh/iowncode/tree/master/iOSCoreMLOnDeviceTraining
 https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml
+
+var a = friedOrNotFriedModel.ModelDescription.IsUpdatable;
 ```
